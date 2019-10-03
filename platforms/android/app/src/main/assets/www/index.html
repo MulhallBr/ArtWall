@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+        <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <title>Sheridan ArtWall</title>
+    </head>
+    <body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#"> </a>
+        <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link active" href="index.html">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" id="signInBtn" href="sign_in.html">Sign In</a>
+                <a class="nav-item nav-link" id="logOutBtn" href="#">Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Modal -->
+    <div class="modal" id="uploadModal" tabindex="-1" role="dialog" aria-labelledby="uploadModalTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="uploadModalTitle">New Post</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img id="modalImage" class="responsive" alt=" "/>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Description</span>
+                        </div>
+                        <textarea id="modalDesc" class="form-control" aria-label="With textarea"></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Discard</button>
+                    <button id="uploadBtn" type="button" class="btn btn-info">Upload</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Feed -->
+    <div class="container pt-0">
+
+        <h1 class="font-weight-light text-center text-lg-left mt-2 mb-0">Sheridan Art Wall</h1>
+
+        <hr class="mt-2 mb-2">
+
+        <div id="feed" class="row text-center text-lg-left">
+
+        </div>
+
+    </div>
+
+    <!-- Button Navbar for Buttons -->
+    <div class="navbar fixed-bottom bg-dark text-light mb-0 mt-5">
+        <div id="bottomWelcome" class="hide">
+            <h3>Please Sign In to Make a Post</h3>
+        </div>
+        <div id="bottomContent" class="input-group">
+            <div class="input-group-prepend">
+                <button class="btn btn-info" type="button" id="cameraBtn">Take Photo</button>
+            </div>
+            <div class="custom-file">
+                <label class="custom-file-label" for="fileBtn">Choose file</label>
+                <input type="file" class="custom-file-input" id="fileBtn">
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/firebase.js"></script>
+    <script type="text/javascript" src="js/logout.js"></script>
+    <script type="text/javascript" src="js/database.js"></script>
+
+    </body>
+</html>
